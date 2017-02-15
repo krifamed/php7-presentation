@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href="https://travis-ci.org/crazy-max/php7-presentation"><img src="https://img.shields.io/travis/crazy-max/php7-presentation/master.svg?style=flat-square" alt="Build Status"></a>
-  <a href="https://www.codacy.com/app/crazy-max/php7-presentation"><img src="https://img.shields.io/codacy/grade/1c78d2c0aa814fd685b60868192d8d81.svg?style=flat-square" alt="Code Quality"></a>
+  <a href="https://www.codacy.com/app/crazy-max/php7-presentation"><img src="https://img.shields.io/codacy/grade/5266ef2b260f499191614f963d7f6acf.svg?style=flat-square" alt="Code Quality"></a>
   <a href="https://gemnasium.com/github.com/crazy-max/php7-presentation"><img src="https://img.shields.io/gemnasium/crazy-max/php7-presentation.svg?style=flat-square" alt="Gemnasium"></a>
   <a href="https://flattr.com/submit/auto?user_id=crazymax&url=https://crazy-max.github.io/php7-presentation"><img src="https://img.shields.io/badge/flattr-this-green.svg?style=flat-square" alt="Flattr this!"></a>
   <a href="https://crazy-max.github.io/php7-presentation"><img src="https://app.statuscake.com/button/index.php?Track=mZ96VTLi6T&Days=1&Design=3" alt="StatusCake Uptime"></a>
@@ -13,7 +13,7 @@
 
 ## About
 
-An overview over the improvments coming with PHP 7 (in French) using RevealJS HTML slide presentation and Jekyll.
+An overview over the improvments coming with PHP 7 (French) using [reveal.js](https://github.com/hakimel/reveal.js) HTML slide presentation and [Jekyll](https://jekyllrb.com).
 
 ## Prerequisites
 
