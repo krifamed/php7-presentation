@@ -2,7 +2,7 @@
 source: src
 destination: web
 url: "https://crazy-max.github.io"
-baseurl: "php7-presentation"
+baseurl: ""
 title: "Présentation PHP 7"
 description: "Aperçu des nouvelles fonctionnalités"
 logo: /img/logo.png
