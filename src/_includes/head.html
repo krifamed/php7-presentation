@@ -1,0 +1,91 @@
+{% include vars.html %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+  <meta name="generator" content="{% jekyll_version %}">
+  <meta name="author" content="{{ site.author.name }}" />
+
+  {% if page.subtitle %}
+  <meta name="description" content="{{ page.subtitle }}">
+  {% endif %}
+
+  {% if site.data.assets_vendor.css %}
+    {% for css in site.data.assets_vendor.css %}
+      {% if css contains "reveal.js/theme" %}
+      <link rel="stylesheet" href="{{ css | prepend: site.baseurl }}" id="theme">
+      {% else %}
+      <link rel="stylesheet" href="{{ css | prepend: site.baseurl }}">
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% if site.data.assets_app.css %}
+    {% for css in site.data.assets_app.css %}
+      <link rel="stylesheet" href="{{ css | prepend: site.baseurl }}">
+    {% endfor %}
+  {% endif %}
+
+  {% if page.css %}
+    {% for css in page.css %}
+    <link rel="stylesheet" href="{{ css | prepend: site.baseurl }}" />
+    {% endfor %}
+  {% endif %}
+
+  {% if page.meta-title %}
+  <meta property="og:title" content="{{ page.meta-title }}" />
+  {% elsif page.title %}
+  <meta property="og:title" content="{{ page.title }}" />
+  {% else %}
+  <meta property="og:title" content="{{ site.title }}" />
+  {% endif %}
+
+  {% if var_seo_description %}
+  <meta property="og:description" content="{{ var_seo_description }}">
+  {% endif %}
+  <meta property="og:type" content="website" />
+
+  {% if page.id %}
+  <meta property="og:url" content="{{ page.url | prepend: var_seo_url | replace: '/index.html', '/' }}" />
+  <link rel="canonical" href="{{ page.url | prepend: var_seo_url | replace: '/index.html', '/' }}" />
+  {% else %}
+  <meta property="og:url" content="{{ var_seo_url | replace: '/index.html', '/' }}" />
+  <link rel="canonical" href="{{ var_seo_url | replace: '/index.html', '/' }}" />
+  {% endif %}
+
+  {% if page.share-img %}
+  <meta property="og:image" content="{{ page.share-img | prepend: var_seo_url }}" />
+  {% elsif site.logo %}
+  <meta property="og:image" content="{{ site.logo | prepend: var_seo_url }}" />
+  {% endif %}
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@{{ site.author.social.twitter }}" />
+  <meta name="twitter:creator" content="@{{ site.author.social.twitter }}" />
+
+  {% if page.meta-title %}
+  <meta name="twitter:title" content="{{ page.meta-title }}" />
+  {% elsif page.title %}
+  <meta name="twitter:title" content="{{ page.title }}" />
+  {% else %}
+  <meta name="twitter:title" content="{{ site.title }}" />
+  {% endif %}
+
+  {% if var_seo_description %}
+  <meta name="twitter:description" content="{{ var_seo_description }}">
+  {% endif %}
+
+  {% if page.share-img %}
+  <meta name="twitter:image" content="{{ page.share-img | prepend: var_seo_url }}" />
+  {% elsif site.logo %}
+  <meta name="twitter:image" content="{{ site.logo | prepend: var_seo_url }}" />
+  {% endif %}
+
+  <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
+</head>

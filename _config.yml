@@ -1,0 +1,104 @@
+# General
+source: src
+destination: web
+url: "https://crazy-max.github.io"
+baseurl: "php7-presentation"
+title: "Présentation PHP 7"
+description: "Aperçu des nouvelles fonctionnalités"
+logo: /img/logo.png
+avatar: /img/avatar.png
+version: 1.0
+excerpt_length: 50
+timezone: "Europe/Paris"
+flattr-username: "crazymax"
+
+# Github
+github:
+  baseurl: https://github.com
+  user: crazy-max
+  repo: php7-presentation
+
+# Author
+author:
+  name: crazy-max
+  job: Developer Enthusiast
+  email:
+  telephone:
+  social:
+    facebook: crazyws.fr
+    github: crazy-max
+    twitter: crazyws
+    reddit:
+    google-plus: 106054122073793220041
+    linkedin:
+    xing:
+    stackoverflow:
+    snapchat:
+    instagram:
+    youtube:
+    spotify:
+
+# License
+display-avatar: false
+
+# Paths
+paths:
+  assets: assets
+  bower: bower_components
+
+# Assets
+assets:
+  app: assets_app.json
+  vendor: assets_vendor.json
+
+# Filters
+filters:
+  css:
+    - src/css/**/*.css
+  js:
+    - src/js/**/*.js
+  data:
+    - src/_data/**/*.json
+  jekyll:
+    - src/**/*.html
+    - src/**/*.md
+    - src/_data/**/*
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+
+# Default YAML values
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+    values:
+      layout: "page"
+
+# Reading Files
+include:
+  - .dev
+exclude:
+  - css
+  - js
+  - vendor
+keep_files:
+  - .git
+  - .svn
+  - assets
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"

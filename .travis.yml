@@ -1,0 +1,33 @@
+language: node_js
+
+node_js:
+  - '6'
+
+before_install:
+  - rvm install 2.3.1
+  - rvm use 2.3.1 --fuzzy
+  - export GEMDIR=$(rvm gemdir)
+
+before_script:
+  - npm install -g bower
+  - npm install -g gulp
+  - bower install
+  - gem install bundler
+  - bundle install
+  - chmod +x ./travis.sh
+
+script: "./travis.sh"
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+    - secure: p+Z6f9z1jjxrMo69GGFqrDRLnl4ofDh/OgxzM2o+c4ASvhjLRMT9DmqT2x+CgAfYaiJ9QQfJy8L7VWC0IJz26P8Wn/tXUaBlY4C6Vt5+DlXICiYrrPZAXQrkBJTDBSivBCh5wLsylQQiP7Z02F2RNraAK2CGqPvlNRl2VhTFB0C+lortA1x9An9Wgmh0WNZVKS3yS5J9U0v3XWl9ZEsxAOiWGGe8zWu3cPcVNlLmvgUyjd6WEAuulQWoJz1aAzmRqWX6eLQdJfVhjYmGgfmY+xdaVpSSeQFUXuXS8kEcS2eyLp55pxC1PkRwrtOUCWhSJhoHGX/hyStKGdoxZ8aHFvC7yRFbiIfLRMSSFjVRiKbYcSyqLNxQTOjwPODfUXbP9YeC+CPS246IAFfKHrkwodGn58pqr/dQcbwk+fTlptZVXWKnYckyMwZeB6F+sadyLiFTHFENdVrLC7RllJHIeD9CRkBwBLaJo5ILVximesk0cqZso03wUzhXEbZcBE43HcQxIAvra2Lu0djaSTrxgAc6lTOOsfqeSe40pdjZqP/xGUtU+/llrEppkpqngoX104sO/afCIaqQ4eaqjgXBbgPX3nC8Ar/GBjXAcUkqo8UEQeKPxWuHH6bBoJxzxRIJLlPmvcsTgaQhnhQ0iagp5qhozH+AOu642cR4Ls4u9Mg=
+    - JEKYLL_ENV=production
+    - JEKYLL_LOG_LEVEL=debug
+    - GH_REF=github.com/crazy-max/php7-presentation.git
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+
+sudo: false
