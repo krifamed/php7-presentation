@@ -59,7 +59,7 @@ gulp.task("assets-vendor-scripts", function() {
   assetsVendorToInject = merge(assetsVendorToInject, gulp.src(mainBowerFiles(), { base: config.paths.bower })
     .pipe(filter(["**/*.js", "**/*.map", "!**/*.css.map"]))
     .pipe(order(["**/jquery.js", "**/reveal.js", "**/*.js"]))
-    .pipe(gutil.env.env === "production" ? uglify() : gutil.noop())
+    //.pipe(gutil.env.env === "production" ? uglify() : gutil.noop())
     .pipe(gutil.env.env === "production" ? bust.resources() : gutil.noop())
     .pipe(gulp.dest(config.destination + "/" + config.paths.assets)));
 });
@@ -68,7 +68,7 @@ gulp.task("assets-vendor-styles", function() {
   assetsVendorToInject = merge(assetsVendorToInject, gulp.src(mainBowerFiles(), { base: config.paths.bower })
     .pipe(filter(["**/*.css", "**/*.css.map"]))
     .pipe(order(["**/reveal.css", "**/theme/black.css", "**/*.css"]))
-    .pipe(gutil.env.env === "production" ? cleanCSS() : gutil.noop())
+    //.pipe(gutil.env.env === "production" ? cleanCSS() : gutil.noop())
     .pipe(gutil.env.env === "production" ? bust.resources() : gutil.noop())
     .pipe(gulp.dest(config.destination + "/" + config.paths.assets)));
 });
@@ -76,7 +76,7 @@ gulp.task("assets-vendor-styles", function() {
 gulp.task("assets-vendor-gfonts", function() {
   assetsVendorToInject = merge(assetsVendorToInject, gulp.src(mainBowerFiles(), { base: config.paths.bower })
     .pipe(filter(["**/index"]))
-    .pipe(gutil.env.env === "production" ? cleanCSS() : gutil.noop())
+    //.pipe(gutil.env.env === "production" ? cleanCSS() : gutil.noop())
     .pipe(rename({ suffix: ".css" }))
     .pipe(gutil.env.env === "production" ? bust.resources() : gutil.noop())
     .pipe(gulp.dest(config.destination + "/" + config.paths.assets)));
