@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://crazy-max.github.io/php7-presentation" target="_blank"><img src="https://crazy-max.github.io/php7-presentation/img/logo.png"></a>
 </p>
-<p align="center">Présentation PHP7</p>
+<p align="center">An overview over the improvments coming with PHP 7 (French) using reveal.js and Jekyll.</p>
 
 <p align="center">
   <a href="https://travis-ci.org/crazy-max/php7-presentation"><img src="https://img.shields.io/travis/crazy-max/php7-presentation/master.svg?style=flat-square" alt="Build Status"></a>
@@ -10,10 +10,6 @@
   <a href="https://flattr.com/submit/auto?user_id=crazymax&url=https://crazy-max.github.io/php7-presentation"><img src="https://img.shields.io/badge/flattr-this-green.svg?style=flat-square" alt="Flattr this!"></a>
   <a href="https://crazy-max.github.io/php7-presentation"><img src="https://app.statuscake.com/button/index.php?Track=gkqs3mBpPk&Days=1&Design=3" alt="StatusCake Uptime"></a>
 </p>
-
-## About
-
-An overview over the improvments coming with PHP 7 (French) using [reveal.js](https://github.com/hakimel/reveal.js) and [Jekyll](https://jekyllrb.com).
 
 ## Prerequisites
 
@@ -45,6 +41,7 @@ As this is just a Jekyll project, you can use any of the commands listed in thei
 ## Credits
 
 * [reveal.js](https://github.com/hakimel/reveal.js)
+* [Jekyll](https://jekyllrb.com/)
 * [PHP 7 logo](http://www.cowburn.info/2015/06/18/php7-logo/)
 
 ## License
