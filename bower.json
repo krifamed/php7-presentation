@@ -1,7 +1,7 @@
 {
   "name": "php7-presentation",
   "description": "PHP7 Presentation",
-  "license": "LGPL-3.0",
+  "license": "MIT",
   "main": "gulpfile.js",
   "authors": [
     "crazy-max"

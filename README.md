@@ -46,4 +46,4 @@ As this is just a Jekyll project, you can use any of the commands listed in thei
 
 ## License
 
-LGPL-3.0. See `LICENSE` for more details.
+MIT. See `LICENSE` for more details.
