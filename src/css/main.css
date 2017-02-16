@@ -166,6 +166,13 @@ div.x-small,
   margin: 0 0 80px 0;
 }
 
+.reveal .title-min {
+  border-bottom: 3px dashed;
+  color: #A0A0A0;
+  text-align: left;
+  margin: .3em 0 .3em 0;
+}
+
 .reveal .emphasize {
   max-width: 65%;
   color: #fa4242;
