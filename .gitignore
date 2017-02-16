@@ -17,5 +17,5 @@
 /bower_components
 
 # Custom
-_config-dev2.yml
+_config-dev.yml
 /src/_data/assets*.json
