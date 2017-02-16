@@ -1,0 +1,106 @@
+<section>
+  <div data-markdown>
+    # PHP 7.1
+  </div>
+</section>
+
+<section>
+  <h5 class="title-min">PHP 7.1</h5>
+  <div data-markdown>
+    ##### Visibilités des constantes de classe
+
+    ````php
+    class Foo {
+      public const PUB_BAR = 42;
+      private const PRIV_BAR = 1234;
+      public function bar() {
+    &nbsp;&nbsp;&nbsp;&nbsp;var_dump(self::PRIV_BAR);
+      }
+    }
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      Les constantes de classes supportent désormais les visibilités public, protected et private.
+      Les constantes sans visibilité seront attribuées comme publiques.
+      Les interfaces, elles, peuvent uniquement déclarer des constantes comment étant publiques.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">PHP 7.1</h5>
+  <div data-markdown>
+    ##### Type de retour "void"
+
+    ````php
+    function noReturn(): void {
+      // Valid
+    }
+
+    function nothing(): void {
+      return; // Valid too!
+    }
+
+    function outch(void $foo) {
+      // Fatal error.
+    }
+
+    function returnNull(): void {
+      return null; // Fatal error.
+    }
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      C'est le type de retour qu'il manquait depuis la sortie de PHP 7.0.
+      Vous pouvez maintenant indiquer qu'une fonction ne retourne rien.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">PHP 7.1</h5>
+
+  <div data-markdown>##### Types "nullable"</div>
+
+  <div class="twocol" data-markdown>
+    ````php
+    function response1(): ?int {
+      return null; // OK
+    }
+
+    function response2(): ?int {
+      return 42; // OK
+    }
+    ````
+  </div>
+
+  <div class="twocol" data-markdown>
+    ````php
+    function response3(): ?int {
+      return new stdClass; // ERROR
+    }
+
+    // Le paramètre doit valoir un string ou être null
+    function dire(?string $message) {
+      if ($message) {
+    &nbsp;&nbsp;&nbsp;&nbsp;echo $message;
+      }
+    }
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      Bon, le retour de type "void" n'était pas le seul qu'il manquait. Mais le type nullable est un peu différent.
+      En effet, il permet de compléter un type de paramètre ou de retour en indiquant qu'il accepte en plus le type "null".
+    </p>
+    <p>
+      La sortie de PHP 7.1 signe également l'abandon de la librairie mcrypt (donc de toutes les fonctions type mcrypt_*),
+      le support des closures depuis des callable ou encore de l'ajout d'avertissements lors des conversions pendant les opérations arithmétiques.
+    </p>
+  </aside>
+</section>

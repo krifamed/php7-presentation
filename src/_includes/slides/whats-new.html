@@ -1,0 +1,296 @@
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Types scalaires pour les paramètres</h2>
+
+  <div class="fragment" data-markdown>
+    ##### Types scalaires
+    `bool`, `int`, `float`, `string`.
+  </div>
+
+  <div class="fragment" data-markdown>
+    ##### Typehint
+    ````php
+    function formatDateInFrench(DateTime $date) {
+      return $date->format('d/m/Y');
+    }
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      Les types scalaires sont les types les plus simples en PHP, ce sont sont avec lesquels vous avez appris à utiliser le langage : bool, int, float, string.
+      Ce sont des types extremement courants dans vos développement quotidiens, je pense que l'on peut se passer de beaucoup plus d'explications.
+    </p>
+    <p>
+      Le typehint permet d'imposer à une fonction d'accepter uniquement des données d'un certain type. Introduit avec PHP 5.0, cela vous permet d'être certain
+      que ce que vous recevez dans votre fonction est effectivement une données du type souhaité.<br />
+    </p>
+    <p>(NEXT)</p>
+    <p>
+      Vous n'avez pas besoin de alors de vous demander si $date est du type DateTime, vous avez la garantie qu'il l'est.
+      Si un objet d'un autre type est passé en paramètre, une Fatal Error sera déclenchée.<br />
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Null coalesce operator</h2>
+
+  <div class="fragment" data-markdown>
+    ````php
+    // Before
+    $username = isset($_GET['user']) ? $_GET['user'] : 'nobody';
+    ````
+  </div>
+
+  <div class="fragment" data-markdown>
+    ````php
+    // After
+    $username = $_GET['user'] ?? 'nobody';
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      PHP étant un langage orienté vers le web, le fait de traiter des variables (tester leurs existences et fournir une valeur par défaut) est très fréquent.
+      Jusqu'à là il n'existait pas de méthode plus courte que celle-ci.
+    </p>
+    <p>NEXT</p>
+    <p>
+      Ce nouveau opérateur fournir une syntaxe plus courte et plus facilement compréhensible.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Spaceship operator</h2>
+
+  <div class="twocol">
+    <div class="fragment" data-markdown>
+      ````php
+      // Before
+      function foo($a ,$b) {
+        if ($a == $b) {
+      &nbsp;&nbsp;&nbsp;&nbsp;return 0;
+        } elseif ($a > $b) {
+      &nbsp;&nbsp;&nbsp;&nbsp;return -1;
+        } elseif ($b > $a) {
+      &nbsp;&nbsp;&nbsp;&nbsp;return 1;
+        }
+      }
+      ````
+    </div>
+  </div>
+
+  <div class="twocol">
+    <div class="fragment" data-markdown>
+      ````php
+      // After
+      function foo($a ,$b) {
+        return $a <=> $b;
+      }
+      ````
+    </div>
+  </div>
+
+  <aside class="notes">
+    <p>
+      C'est un nouveau opérateur qui retourne 0 si les deux opérandes sont égaux, 1 si celui de gauche est plus grand et -1 si celui de droite est plus grand.
+      Son utilité est fréquente, particulièrement dans les algorithmes de tri.
+      Avant nous avions : NEXT
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Type de retour</h2>
+
+  <div data-markdown>
+    ````php
+    // After
+    function isValidStatusCode(int $statusCode): bool {
+      return isset($this->statuses[$statusCode]);
+    }
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      On peut maintenant spécifier le type de retour d'une fonction ou d'une méthode. Pour cela il suffit d'ajouter deux points et le type que la fonction/méthode retourne.
+      Si le mode stricte n'est pas activé, quand une variable du mauvais type est retournée elle est convertie vers le bon type. Sinon un Fatal Error est déclenché.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Typage strict</h2>
+
+  <div class="fragment" data-markdown>
+    ````php
+    declare(strict_types=1);
+
+    function add(int $a, int $b) {
+      return $a + $b;
+    }
+
+    add(10, '20');
+    ````
+  </div>
+
+  <div class="fragment" data-markdown>
+    ````
+    Fatal error: Uncaught TypeError:
+    &nbsp;&nbsp;&nbsp;&nbsp;Argument 2 passed to add()
+    &nbsp;&nbsp;&nbsp;&nbsp;must be of the type integer, string given
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      Si l'approche souple du typage ne vous satisfait pas ou que vous êtes certains des types de données
+      manipulés par votre code, vous pouvez activer un mode de typage strict, pour le fichier courant.
+    </p>
+    <p>
+      Ici, puisque '20' n'est pas un entier et que nous sommes en mode de typage strict, une TypeError sera levée :
+    </p>
+    <p>
+      Pour la distinction entre typage souple et typage strict :<br />
+      - Pour les paramètres, c'est au choix de l'appelant : c'est lui qui sait s'il manipule des données en types souples ou stricts.<br />
+      - Pour la valeur de retour, c'est au choix de l'appelé, qui sait si la fonction qu'il a écrite utilise des types souples ou stricts.<br />
+      Dans tous les cas, à l'intérieur de la fonction, les données sont des types indiqués : le paramétrage souple ou strict détermine uniquement si les conversions sont permises.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Classes anonymes</h2>
+
+  <div class="twocol">
+    <div class="fragment" data-markdown>
+      ````php
+      // Before
+      class Logger {
+        public function log($msg) {
+          echo $msg;
+        }
+      }
+
+      $util->setLogger(new Logger());
+      ````
+    </div>
+  </div>
+
+  <div class="twocol">
+    <div class="fragment" data-markdown>
+      ````php
+      // After
+      $util->setLogger(new class {
+        public function log($msg) {
+          echo $msg;
+        }
+      });
+      ````
+    </div>
+  </div>
+
+  <aside class="notes">
+    <p>
+      Le support pour les classes anonymes a été rajouté en PHP 7. Les classes anonymes sont utiles lorsque de simples objets uniques ont besoin d'être créés.
+      On peut leur passer des arguments via le constructeur, elles peuvent étendre d'autres classes, implémenter des interfaces ou utiliser des traits comme avec avec une classe normale.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Améliorations sur la gestion des erreurs</h2>
+
+  <div data-markdown>
+    * Erreurs fatales internes → exceptions
+    * Hiérarchie d'erreurs / exceptions
+  </div>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Erreurs fatales internes → exceptions</h2>
+
+  <div class="fragment" data-markdown>
+    ````php
+    $obj = null;
+    try {
+      // Ooops !
+      $obj->methode();
+    } catch (Error $e) {
+      var_dump($e>getMessage());
+    }
+    ````
+  </div>
+
+  <div class="fragment" data-markdown>
+    ````
+    string(43) "Call to a member function methode() on null"
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      Avec PHP 7.0, une partie des erreurs Fatales et internes à / levées par PHP sont transformées en Error, qui peuvent être catchées. Par exemple :
+    </p>
+    <p>
+      Cette portion de code qui aurait entrainé en PHP 5 une Fatal Error mettant fin à l'exécution du script,
+      mène désormais à la sortie suivante, où nous sommes passés dans le bloc catch :
+    </p>
+    <p>
+      J'insiste : cette modification, qui va fortement aider ceux qui font tourner des programmes PHP pendant longtemps, ne s'applique pour l'instant qu'à certaines erreurs fatales, et uniquement levées depuis le moteur de PHP.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Hiérarchie d'erreurs / exceptions</h2>
+
+  <div class="fragment" data-markdown>
+  ````php
+  interface Throwable
+  &nbsp;&nbsp;&nbsp;&nbsp;Exception implements Throwable
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Toutes les exceptions usuelles
+  &nbsp;&nbsp;&nbsp;&nbsp;Error implements Throwable
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AssertionError extends Error
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ParseError extends Error
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TypeError extends Error
+  ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      Pour accompagner ce changement, la hiérarchie des classes d'exceptions a été revue, avec l'introduction d'une interface Throwable commune à tous les types d'exceptions.
+      Les exceptions usuelles continuent d'hériter de Exception, alors que les erreurs héritent quant à elles de Error, qui est une classe-soeur de Exception
+    </p>
+    <p>
+      De la sorte, le code qui attrapait une Exception ne se retrouve pas subitement, à partir de PHP 7.0, à également attraper les Error,
+      assurant que le comportement de votre code ne changera pas en passant de PHP 5 à PHP 7.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Et encore ?</h2>
+
+  <div data-markdown>
+    Sources : http://php.net/manual/fr/migration70.new-features.php
+  </div>
+
+  <aside class="notes">
+    <p>
+      Bien sûr, je n'ai pas listé ici toutes les nouveautés de PHP 7.0 et me suis limité à celles qui avaient le plus attiré mon attention.
+    </p>
+  </aside>
+</section>
