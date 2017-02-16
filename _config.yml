@@ -38,9 +38,6 @@ author:
     youtube:
     spotify:
 
-# License
-display-avatar: false
-
 # Paths
 paths:
   assets: assets

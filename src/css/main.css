@@ -78,16 +78,6 @@
   text-align: right
 }
 
-#license img {
-  float: left;
-  margin: 0 auto;
-  width: 64px;
-  height: 64px;
-  -webkit-border-radius: 50% !important;
-  -moz-border-radius: 50% !important;
-  border-radius: 50% !important;
-}
-
 #license a {
   color: #42affa;
   text-decoration: underline;
