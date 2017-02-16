@@ -1,0 +1,100 @@
+<section>
+  <h1>Pourquoi mettre à jour<br />vers PHP 7 ?</h1>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi mettre à jour vers PHP 7 ?</h5>
+
+  <h1>PHP 5</h1>
+  <h2>est maintenant âgé de 13 ans</h2>
+
+  <div class="fragment">
+    <h1>+<br />PHP 7</h1>
+    <h2>est assez mature</h2>
+  </div>
+
+  <aside class="notes">
+    <p>Comme on l'a vu sur la timeline il était temps de passer à une nouvelle version majeure après 13 ans de service pour PHP 5!</p>
+    <p>De plus, PHP 7 est assez mature pour se permettre cette transition!</p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi mettre à jour vers PHP 7 ?</h5>
+  <div class="twocol">
+    <p data-markdown style="text-align: center;">
+      **De meilleures performances grâce à PHPNG**
+      (PHP Next Generation)
+    </p>
+    <div class="fragment">
+      <p style="text-align: center;">
+        =
+      </p>
+      <p data-markdown  style="text-align: center;">
+        **à Facebook HHVM**
+        (HipHop Virtual Machine)
+      </p>
+    </div>
+  </div>
+  <div data-markdown class="twocol">
+    ![]({{ site.baseurl }}/img/memory-usage.png)
+  </div>
+
+  <aside class="notes">
+    <p>
+      Cette nouvelle version est basée sur PHPNG (pour PHP Next-Generation).
+      Une initiative qui a été lancée par Zend en réponse à la technologie HHVM de Facebook,
+      qui avait pour but de proposer une version de PHP qui se voulait plus performante.
+    </p>
+
+    <p>
+      Selon Zend, la mise à jour des applications vers PHP 7 pourrait engendrer un surcroît de performance de 25% à 70%.
+      L'éditeur a publié quelques indicateurs qu'il a résumé en une <a href="https://pages.zend.com/rs/zendtechnologies/images/PHP7-Performance%20Infographic.pdf">infographie publiée en mai 2015</a>.
+      Ces comparatifs montrent que WordPress (en version 4.1) serait deux fois plus rapide avec PHP 7 qu'avec PHP 5.6, et Drupal (7) 70% plus rapide.
+      A travers son benchmark, le projet PHP met aussi en avant un niveau d'optimisation qui se veut être au même niveau que celui de HHVM, voire légèrement au dessus.
+    </p>
+
+    <p>
+      Pour info la machine virtuelle HHVM permet optimiser le développement, le débogage et l'exécution de code PHP.
+      Le langage Hack créé aussi par Facebook et proche du PHP est utilisé sur la quasi-totalité du site de Facebook
+      et s'exécute au sein d'une machine virtuelle HHVM.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi mettre à jour vers PHP 7 ?</h5>
+  <div data-markdown>
+    *Source : https://www.zend.com*
+
+    ![]({{ site.baseurl }}/img/zend-infographic-drupal.png)
+  </div>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi mettre à jour vers PHP 7 ?</h5>
+  <div data-markdown>
+    *Source : https://www.zend.com*
+
+    ![]({{ site.baseurl }}/img/zend-infographic-lang.png)
+  </div>
+
+  <aside class="notes">
+    Ce graphique est à prendre avec des pincettes, notamment pour Ruby qui depuis sa version 2.3 a des performances équivalentes avec PHP 7.
+    Quoique la 7.1 qui est sortie il y a quelques semaines est encore plus prometteuse.
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi mettre à jour vers PHP 7 ?</h5>
+  <div data-markdown>
+    *Source : https://twitter.com/andygrunwald/status/735515546033262592*
+
+    ![]({{ site.baseurl }}/img/trivago-response-time.png)
+  </div>
+
+  <aside class="notes">
+    <p>Sur ce graphique on a une représentation plus concrète du passage à PHP 7 pour le site de comparaison d'hôtels Trivago.</p>
+    <p>Seule la configuration de FPM a été modifiée. Les admins n'ont pas eu besoin de toucher au serveur web ou au php.ini</p>
+  </aside>
+</section>

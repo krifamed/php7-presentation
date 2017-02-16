@@ -12,8 +12,7 @@
     "google-fonts-montserrat": "https://fonts.googleapis.com/css?family=Montserrat:400,700",
     "google-fonts-rajdhani": "https://fonts.googleapis.com/css?family=Rajdhani:400,700,600,500,300",
     "zepto": "^1.2.0",
-    "font-awesome": "^4.7.0",
-    "labella": "^1.1.2"
+    "font-awesome": "^4.7.0"
   },
   "overrides": {
     "reveal.js": {
@@ -23,7 +22,8 @@
         "css/theme/black.css",
         "lib/css/zenburn.css",
         "lib/font/**",
-        "lib/js/*.js",
+        "lib/js/classList.js",
+        "lib/js/html5shiv.js",
         "plugin/highlight/**",
         "plugin/markdown/**",
         "plugin/notes/**",
