@@ -7,56 +7,26 @@
 
 <section>
   <h5 class="title-min">Checklist de migration</h5>
-  <strong>ereg*</strong> sont à remplacer par les <strong>PCRE</strong> (Perl Compatible Regular Expression)
-  <div class="twocol">
-    <ul style="list-style-type: none;">
-      <li><span style="color: #d9534f">✘</span> ereg_replace</li>
-      <li><span style="color: #d9534f">✘</span> ereg</li>
-      <li><span style="color: #d9534f">✘</span> eregi_replace</li>
-      <li><span style="color: #d9534f">✘</span> eregi</li>
-      <li><span style="color: #d9534f">✘</span> split</li>
-      <li><span style="color: #d9534f">✘</span> spliti</li>
-      <li><span style="color: #d9534f">✘</span> sql_regcase</li>
-    </ul>
+  <h2>Suppression des fonctionnalités dépréciées</h2>
+  <div data-markdown>
+    https://wiki.php.net/rfc/remove_deprecated_functionality_in_php7
   </div>
-  <div class="twocol">
-    <ul style="list-style-type: none;">
-      <li><span style="color: #5cb85c">✓</span> preg_filter</li>
-      <li><span style="color: #5cb85c">✓</span> preg_grep</li>
-      <li><span style="color: #5cb85c">✓</span> preg_last_error</li>
-      <li><span style="color: #5cb85c">✓</span> preg_match_all</li>
-      <li><span style="color: #5cb85c">✓</span> preg_match</li>
-      <li><span style="color: #5cb85c">✓</span> preg_quote</li>
-      <li><span style="color: #5cb85c">✓</span> preg_replace_callback_array</li>
-      <li><span style="color: #5cb85c">✓</span> preg_replace_callback</li>
-      <li><span style="color: #5cb85c">✓</span> preg_replace</li>
-      <li><span style="color: #5cb85c">✓</span> preg_split</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h5 class="title-min">Checklist de migration</h5>
-  Extension <strong>mysql</strong> supprimée et donc les fonctions <strong>mysql_*</strong> associées
   <div class="fragment" style="font-size: 1.5em;">
     <code><span style="text-decoration:line-through;">mysql_*</span> <strong><</strong> MySQLi <strong><</strong> PDO</code>
   </div>
-  <div>
-    <ul style="list-style-type: none;">
-      <li><span style="color: #d9534f">✘</span> mysql_affected_rows</li>
-      <li><span style="color: #d9534f">✘</span> mysql_client_encoding</li>
-      <li><span style="color: #d9534f">✘</span> mysql_close</li>
-      <li><span style="color: #d9534f">✘</span> mysql_connect</li>
-      <li><span style="color: #d9534f">✘</span> mysql_create_db</li>
-      <li><span style="color: #d9534f">✘</span> mysql_data_seek</li>
-      <li><span style="color: #d9534f">✘</span> mysql_db_name</li>
-      <li><span style="color: #d9534f">✘</span> ...</li>
-    </ul>
+  <div class="fragment" style="font-size: 1.5em;">
+    <code><span style="text-decoration:line-through;">ereg*</span> <strong><</strong> pcre</code>
   </div>
 
   <aside class="notes">
-    En résumé vous devrez passer à PDO!<br />
-    L'extension mssql a également été supprimée.
+    <p>
+      Extension <strong>mysql</strong> supprimée et donc les fonctions <strong>mysql_*</strong> associées.
+      En résumé vous devrez passer à PDO!
+      L'extension mssql a également été supprimée.
+    </p>
+    <p>
+      <strong>ereg*</strong> sont à remplacer par les <strong>PCRE</strong> (Perl Compatible Regular Expression)
+    </p>
   </aside>
 </section>
 
@@ -73,5 +43,86 @@
       <li>always_populate_raw_post_data : si défini à TRUE, PHP va toujours peupler la variable $HTTP_RAW_POST_DATA des données brutes POST</li>
       <li>asp_tags : Active l'utilisation des balises ASP (<% %>) tout en conservant les balises PHP (<?php ?>). Cela inclut l'utilisation des balises courtes comme <%= $valeur %></li>
     </ul>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Checklist de migration</h5>
+  <div data-markdown>
+    ## Constructeurs PHP 4 dépréciés
+    ````php
+    class Filter {
+      public function filter() { ... }
+    }
+    new Filter();
+    ````
+    https://wiki.php.net/rfc/remove_php4_constructors
+  </div>
+
+  <aside class="notes">
+    <p>
+      Les constructeurs PHP4 ne sont plus reconnus dans une classe d'un namespace.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Checklist de migration</h5>
+  <div data-markdown>
+    ## Mots clés réservés supplémentaires
+    `bool`, `int`, `float`, `string`, `resource`, ...
+  </div>
+  <div class="fragment" data-markdown>
+    ````php
+    class resource {
+      public function __construct() { ... }
+    }
+    new resource();
+    ````
+  </div>
+  <div class="fragment" data-markdown>
+    ````text
+    Fatal error: "resource" cannot be used as a classname.
+    ````
+  </div>
+  <div data-markdown>
+    https://wiki.php.net/rfc/reserve_more_types_in_php_7
+    https://wiki.php.net/rfc/reserve_even_more_types_in_php_7
+  </div>
+
+  <aside class="notes">
+    <p>
+      Certains types sont devenus des mots clés réservés pour les noms de classes, traits et interfaces.
+    </p>
+    <p>
+      Par exemple ceci vous retournera une erreur fatale.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Checklist de migration</h5>
+  <div data-markdown>
+    ## "default" unique pour switch
+    ````php
+    switch($expr) {
+      default:
+    &nbsp;&nbsp;&nbsp;&nbsp;neverExecuted();
+    &nbsp;&nbsp;&nbsp;&nbsp;break;
+      default:
+    &nbsp;&nbsp;&nbsp;&nbsp;executed();
+    }
+    ````
+  </div>
+  <div class="fragment" data-markdown>
+    ````text
+    Fatal error: Switch statements may only contain one default clause.
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      switch n'accepte plus plusieurs default et générera une erreur fatale.
+    </p>
   </aside>
 </section>
