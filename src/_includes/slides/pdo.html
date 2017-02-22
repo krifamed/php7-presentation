@@ -1,0 +1,131 @@
+<section>
+  <div data-markdown>
+    ## Pourquoi PDO ?
+  </div>
+  <p>
+    <img data-src="{{ site.baseurl }}/img/why.jpg" class="img-responsive" alt="">
+  </p>
+
+  <aside class="notes">
+    <p>
+      Tout à l'heure je vous ai parlé de PDO (PHP Data Object). On va faire un petit rappel.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi PDO ?</h5>
+  <h2>Flexibilité des vendors</h2>
+
+  <div class="twocol">
+    <ul>
+      <li>PostgreSQL</li>
+      <li>SQLite</li>
+      <li>MySQL</li>
+      <li>Oracle</li>
+      <li>ODBC</li>
+      <li>MS SQLServer & Azure</li>
+    </ul>
+  </div>
+
+  <div class="twocol">
+    <ul>
+      <li>Firebird</li>
+      <li>Informix</li>
+      <li>IBM DB2</li>
+      <li>Sybase</li>
+      <li>Cubrid</li>
+      <li>4D</li>
+    </ul>
+  </div>
+
+  <aside class="notes">
+    <p>
+      Tout d'abord un point fort de PDO est la disponibilité des drivers pour plusieurs SGBD maintenus par la communauté PHP.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi PDO ?</h5>
+  <h2>Facilité d'installation</h2>
+
+  <div data-markdown>
+    ##### Debian (via Dotdeb repository)
+
+    ````text
+    sudo apt-get install php7.0-mysql
+    ````
+
+    ##### CentOS / RHEL (via Remi repository)
+
+    ````text
+    sudo yum install php-pdo php-mysql
+    ````
+
+    ##### Neard : activé par défaut
+  </div>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi PDO ?</h5>
+  <h2>Méthode de connexion unifiée et standard</h2>
+
+  <div data-markdown>
+    ````php
+    // MySQL
+    $dbh = new PDO("mysql:host=$host;dbname=$dbname, $user, $pass");
+
+    // MSSQL
+    $dbh = new PDO("mssql:host=$host;dbname=$dbname, $user, $pass");
+
+    // Sybase
+    $dbh = new PDO("sybase:host=$host;dbname=$dbname, $user, $pass");
+
+    // SQLite
+    $dbh = new PDO("sqlite:my/database/path/database.db");
+    ````
+  </div>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi PDO ?</h5>
+  <h2>Prepared statements pour se protéger des injections</h2>
+
+  <div data-markdown style="font-size: 0.8em;">
+    ````php
+    // No placeholders
+    $sth = $dbh->prepare("INSERT INTO users (name, email) VALUES ($name, $email)");
+
+    // Unnamed placeholders
+    $sth = $dbh->prepare("INSERT INTO users (name, email) VALUES (?, ?)");
+    $sth->bindParam(1, $name);
+    $sth->bindParam(2, $email);
+
+    // Named placeholders
+    $sth = $dbh->prepare("INSERT INTO users (name, email) VALUES (:name, :email)");
+    $sth->bindParam(':name', $name);
+    $sth->bindParam(':email', $email);
+
+    // Execute
+    $sth->execute();
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      Evitez la première, elle est là pour exemple de comparaison.
+      Pour les deux autres solutions ça dépendra de comment vous affectez les données àvos statements.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi PDO ?</h5>
+
+  <div data-markdown>
+    ##### Pour plus d'infos je vous invite à lire cet article :
+
+    https://code.tutsplus.com/tutorials/why-you-should-be-using-phps-pdo-for-database-access--net-12059
+  </div>
+</section>
