@@ -6,8 +6,7 @@
 <p align="center">
   <a href="https://travis-ci.org/crazy-max/php7-presentation"><img src="https://img.shields.io/travis/crazy-max/php7-presentation/master.svg?style=flat-square" alt="Build Status"></a>
   <a href="https://www.codacy.com/app/crazy-max/php7-presentation"><img src="https://img.shields.io/codacy/grade/5266ef2b260f499191614f963d7f6acf.svg?style=flat-square" alt="Code Quality"></a>
-  <a href="https://gemnasium.com/github.com/crazy-max/php7-presentation"><img src="https://img.shields.io/gemnasium/crazy-max/php7-presentation.svg?style=flat-square" alt="Gemnasium"></a>
-  <a href="https://crazy-max.github.io/php7-presentation"><img src="https://app.statuscake.com/button/index.php?Track=gkqs3mBpPk&Days=1&Design=3" alt="StatusCake Uptime"></a>
+  <a href="https://libraries.io/github/crazy-max/php7-presentation"><img src="https://img.shields.io/librariesio/github/crazy-max/php7-presentation.svg?style=flat-square" alt="Gemnasium"></a>
 </p>
 
 ## Prerequisites
