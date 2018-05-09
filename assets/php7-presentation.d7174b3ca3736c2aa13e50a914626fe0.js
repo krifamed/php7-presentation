@@ -1,0 +1,1 @@
+Zepto(function(t){var e=t("#table-of-contents"),n=t("<ol />");t(".toc-element").each(function(e){var o=t(this);o.closest("section").index();o.text()&&n.append(["<li>",o.text(),"</li>"].join(""))}),e.html(n)});

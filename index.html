@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="fr">
+  
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <title>Présentation PHP 7</title>
+
+  <meta name="generator" content="Jekyll 3.7.2">
+  <meta name="author" content="crazy-max" />
+
+  
+
+  
+    
+      
+      <link rel="stylesheet" href="/php7-presentation/assets/google-fonts-montserrat/index.css">
+      
+    
+      
+      <link rel="stylesheet" href="/php7-presentation/assets/google-fonts-rajdhani/index.css">
+      
+    
+      
+      <link rel="stylesheet" href="/php7-presentation/assets/reveal.js/css/reveal.css">
+      
+    
+      
+      <link rel="stylesheet" href="/php7-presentation/assets/reveal.js/css/theme/black.css">
+      
+    
+      
+      <link rel="stylesheet" href="/php7-presentation/assets/font-awesome/css/font-awesome.css">
+      
+    
+      
+      <link rel="stylesheet" href="/php7-presentation/assets/reveal.js/lib/css/zenburn.css">
+      
+    
+      
+      <link rel="stylesheet" href="/php7-presentation/assets/reveal.js/lib/font/league-gothic/league-gothic.css">
+      
+    
+      
+      <link rel="stylesheet" href="/php7-presentation/assets/reveal.js/lib/font/source-sans-pro/source-sans-pro.css">
+      
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/php7-presentation/assets/php7-presentation.98dffcd7ef605176ab920a04988fd44f.css">
+    
+  
+
+  
+
+  
+  <meta property="og:title" content="Présentation PHP 7" />
+  
+
+  
+  <meta property="og:description" content="Aperçu des nouvelles fonctionnalités">
+  
+  <meta property="og:type" content="website" />
+
+  
+  <meta property="og:url" content="https://crazy-max.github.io/php7-presentation" />
+  <link rel="canonical" href="https://crazy-max.github.io/php7-presentation" />
+  
+
+  
+  <meta property="og:image" content="https://crazy-max.github.io/php7-presentation/img/logo.png" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@crazyws" />
+  <meta name="twitter:creator" content="@crazyws" />
+
+  
+  <meta name="twitter:title" content="Présentation PHP 7" />
+  
+
+  
+  <meta name="twitter:description" content="Aperçu des nouvelles fonctionnalités">
+  
+
+  
+  <meta name="twitter:image" content="https://crazy-max.github.io/php7-presentation/img/logo.png" />
+  
+</head>
+  <body>
+    
+
+<a href="https://github.com/crazy-max/php7-presentation"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 1" src="img/fork-me.png"></a>
+
+<div class="reveal">
+  <div class="slides">
+    <section>
+  <div style="width: 80%; margin: 0 auto">
+    <h1 class="title">Présentation PHP 7</h1>
+    <h5><i>En bref :</i></h5>
+    <h3 class="emphasize">Aperçu des nouvelles fonctionnalités</h3>
+  </div>
+
+  <div id="helpfooter">
+    <code>?</code> pour l'aide
+  </div>
+
+  <div class="profile">
+    <div class="profile-sidebar">
+      <div class="profile-userpic">
+        <img data-src="/php7-presentation/img/avatar.png" class="img-responsive" alt="">
+      </div>
+      <div class="profile-usertitle">
+        <div class="profile-usertitle-name">crazy-max</div>
+        <div class="profile-usertitle-job">Developer Enthusiast</div>
+      </div>
+    </div>
+    <div class="profile-social">
+      <ul class="list-inline text-center footer-links">
+  
+  <li>
+    <a target="_blank" href="https://www.facebook.com/crazyws.fr" title="Facebook">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a target="_blank" href="https://github.com/crazy-max" title="GitHub">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+  <li>
+    <a target="_blank" href="https://twitter.com/crazyws" title="Twitter">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+  
+  <li>
+    <a target="_blank" href="https://plus.google.com/106054122073793220041" title="Google+">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+    </div>
+  </div>
+
+  <div id="version">2017-02-13</div>
+
+  <div id="license">
+  Présentation PHP 7: Aperçu des nouvelles fonctionnalités by <a href="https://github.com/crazy-max">crazy-max</a><br />
+  Licensed under the <a rel="license" href="https://opensource.org/licenses/MIT">MIT License</a> | <a href="https://github.com/crazy-max/php7-presentation">https://github.com/crazy-max/php7-presentation</a><br />
+  Powered by <a href="http://lab.hakim.se/reveal-js/">reveal.js</a> and <a href="http://lab.hakim.se/reveal-js/">Jekyll 3.7.2</a>
+</div>
+</section>
+    <section>
+  <div>
+    <div data-markdown>
+      ## Agenda
+
+      - Timeline
+      - Passer à PHP 7 ?
+      - Checklist de migration
+      - Pourquoi PDO ?
+      - Nouveautés
+      - PHP 7.1
+      - Tester une migration à PHP 7
+      - Symfony
+      - Des questions ?
+    </div>
+  </div>
+</section>
+    <section>
+  <div data-markdown>
+    # Timeline
+  </div>
+  <p>
+    <img data-src="/php7-presentation/img/look-left.jpg" class="img-responsive" alt="">
+  </p>
+</section>
+
+<section>
+  <h5 class="title-min">Timeline</h5>
+  <div data-markdown>
+    *Source : https://fr.wikipedia.org/wiki/PHP*
+  </div>
+  <p>
+    <img data-src="/php7-presentation/img/timeline.png" class="img-responsive" alt="">
+  </p>
+
+  <aside class="notes">
+    <p>Voici un petit historique des versions de PHP depuis sa naissance.</p>
+    <p>
+      <strong>1.0</strong>
+      Appelé officiellement "Personal Home Page Tools (PHP Tools)", outils pour page personnelle. C'est la première apparition du nom "PHP"
+    </p>
+    <p>
+      <strong>2.0</strong>
+      Appelé officiellement "PHP/FI 2.0", c'est la première version qui pourrait effectivement être qualifiée de PHP
+      comme étant une langue autonome avec de nombreuses fonctionnalités.
+    </p>
+    <p>
+      <strong>3.0</strong>
+      Passage d'une personne à une équipe de développeurs. Zeev Suraski et Andi Gutmans réécrivent la base de cette version
+    </p>
+    <p>
+      <strong>4.0</strong>
+      Ajout d'un système d'analyse syntaxique plus avancé appelé le Zend Engine. Ce moteur procède en deux étapes d'analyse puis d'exécution.<br />
+      Introduit les superglobals.<br />
+      Introduit le CLI, en addition au CGI.<br />
+    </p>
+    <p>
+      <strong>5.0</strong>
+      Zend Engine II avec un nouveau modèle objet.
+    </p>
+    <p>
+      <strong>5.1</strong>
+      Naissance de PDO<br />
+      Amélioration de performances par l'introduction de variables de compilation dans un moteur PHP repensé
+    </p>
+    <p>
+      <strong>5.3</strong>
+      Beaucoup de choses avec :
+      Support des espaces de noms ; Late Static Bindings (résolution statique à la volée) ; étiquettes de saut (goto limité) ;
+      fermetures (closures) ; Native PHP archives (phar) ; raccourci pour l'opérateur ternaire (?:) ; fonctions anonymes ; nombreuses corrections de bug ; Introduit PHP-FPM
+    </p>
+    <p>
+      <strong>5.4</strong>
+      Support des traits ; syntaxe courte des tableaux introduite ; accès aux index de tableaux en sortie de fonctions ; les fermetures supportent $this ;
+      accès aux attributs d'un objet dès l'instanciation ; ajout syntaxe Class::{expr}() ; ajout format de nombres binaires ;
+      suivi des envois de fichiers via l'extension de session ; serveur web embarqué en CLI dédié au développement ;
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Timeline</h5>
+  <div data-markdown>
+    *Source : http://php.net/supported-versions.php*
+  </div>
+  <p>
+    <img data-src="/php7-presentation/img/php-calendar.png" class="img-responsive" alt="">
+  </p>
+</section>
+    <section>
+  <h2>Passer à PHP 7 ?</h2>
+  <p>
+    <img data-src="/php7-presentation/img/get-ready-php7.jpg" class="img-responsive" alt="">
+  </p>
+</section>
+
+<section>
+  <h5 class="title-min">Passer à PHP 7 ?</h5>
+
+  <h1>PHP 5</h1>
+  <h2>est maintenant âgé de 13 ans</h2>
+
+  <div class="fragment">
+    <h1>+<br />PHP 7</h1>
+    <h2>est assez mature</h2>
+  </div>
+
+  <aside class="notes">
+    <p>Comme on l'a vu sur la timeline il était temps de passer à une nouvelle version majeure après 13 ans de service pour PHP 5!</p>
+    <p>De plus, PHP 7 est assez mature pour se permettre cette transition!</p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Passer à PHP 7 ?</h5>
+  <div class="twocol">
+    <p data-markdown style="text-align: center;">
+      **De meilleures performances grâce à PHPNG**
+      (PHP Next Generation)
+    </p>
+    <div class="fragment">
+      <p style="text-align: center;">
+        =
+      </p>
+      <p data-markdown  style="text-align: center;">
+        **à Facebook HHVM**
+        (HipHop Virtual Machine)
+      </p>
+    </div>
+  </div>
+  <div class="twocol">
+    <img data-src="/php7-presentation/img/memory-usage.png" class="img-responsive" alt="">
+  </div>
+  <div data-markdown>
+    Plus d'infos sur le bench : http://talks.php.net/oz15#/drupalbench
+  </div>
+
+  <aside class="notes">
+    <p>
+      Cette nouvelle version est basée sur PHPNG (pour PHP Next-Generation).
+      Une initiative qui a été lancée par Zend en réponse à la technologie HHVM de Facebook,
+      qui avait pour but de proposer une version de PHP qui se voulait plus performante.
+    </p>
+
+    <p>
+      Selon Zend, la mise à jour des applications vers PHP 7 pourrait engendrer un surcroît de performance de 25% à 70%.
+      L'éditeur a publié quelques indicateurs qu'il a résumé en une <a href="https://pages.zend.com/rs/zendtechnologies/images/PHP7-Performance%20Infographic.pdf">infographie publiée en mai 2015</a>.
+      Ces comparatifs montrent que WordPress (en version 4.1) serait deux fois plus rapide avec PHP 7 qu'avec PHP 5.6, et Drupal (7) 70% plus rapide.
+      A travers son benchmark, le projet PHP met aussi en avant un niveau d'optimisation qui se veut être au même niveau que celui de HHVM, voire légèrement au dessus.
+    </p>
+
+    <p>
+      Pour info la machine virtuelle HHVM permet optimiser le développement, le débogage et l'exécution de code PHP.
+      Le langage Hack créé aussi par Facebook et proche du PHP est utilisé sur la quasi-totalité du site de Facebook
+      et s'exécute au sein d'une machine virtuelle HHVM.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Passer à PHP 7 ?</h5>
+  <div data-markdown>
+    *Source : https://www.zend.com*
+  </div>
+  <p>
+    <img data-src="/php7-presentation/img/zend-infographic-drupal.png" class="img-responsive" alt="">
+  </p>
+</section>
+
+<section>
+  <h5 class="title-min">Passer à PHP 7 ?</h5>
+  <div data-markdown>
+    *Source : https://www.zend.com*
+  </div>
+  <p>
+    <img data-src="/php7-presentation/img/zend-infographic-lang.png" class="img-responsive" alt="">
+  </p>
+
+  <aside class="notes">
+    Ce graphique est à prendre avec des pincettes, notamment pour Ruby qui depuis sa version 2.3 a des performances équivalentes avec PHP 7.
+    Quoique la 7.1 qui est sortie il y a quelques semaines est encore plus prometteuse.
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Passer à PHP 7 ?</h5>
+  <div data-markdown>
+    *Source : https://twitter.com/andygrunwald/status/735515546033262592*
+  </div>
+  <p>
+    <img data-src="/php7-presentation/img/trivago-response-time.png" class="img-responsive" alt="">
+  </p>
+
+  <aside class="notes">
+    <p>Sur ce graphique on a une représentation plus concrète du passage à PHP 7 pour le site de comparaison d'hôtels Trivago.</p>
+    <p>Seule la configuration de FPM a été modifiée. Les admins n'ont pas eu besoin de toucher au serveur web ou au php.ini</p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Passer à PHP 7 ?</h5>
+  <h2>Quelques cas d'étude</h2>
+  <div data-markdown>
+    * [Badoo qui a préservé 1 million de dollars](https://techblog.badoo.com/blog/2016/03/14/how-badoo-saved-one-million-dollars-switching-to-php7/) en passant à PHP 7
+    * [Tumblr qui a réduit sa latence et charge CPU de moitié](https://engineering.tumblr.com/post/152998126990/php-7-at-tumblr)
+    * [Dailymotion qui gère deux fois plus de traffic](http://engineering.dailymotion.com/php-7-deployment-at-dailymotion/) avec la même infrastructure en passant à PHP 7.
+  </div>
+
+  <aside class="notes">
+    D'autres acteurs du net...
+  </aside>
+</section>
+
+<section>
+  <h1>PHP 6 ?</h1>
+  Prise en charge de l'Unicode au coeur du langage.<br />
+  Non publié, le projet a été abandonné.
+  <div data-markdown>
+    Plus d'infos : https://wiki.php.net/rfc/php6
+  </div>
+
+  <aside class="notes">
+    L'accumulation du retard et des problèmes a conduit en mars 2010 à l'abandon du projet PHP 6 : les morceaux rassemblés jusque-là
+    furent alors intégrés dans la version 5.4.
+  </aside>
+</section>
+
+    <section>
+  <h1>Checklist de migration</h1>
+  <p>
+    <img data-src="/php7-presentation/img/checklist.jpg" class="img-responsive" alt="">
+  </p>
+</section>
+
+<section>
+  <h5 class="title-min">Checklist de migration</h5>
+  <h2>Suppression des fonctionnalités dépréciées</h2>
+  <div data-markdown>
+    https://wiki.php.net/rfc/remove_deprecated_functionality_in_php7
+  </div>
+  <div class="fragment" style="font-size: 1.5em;">
+    <code><span style="text-decoration:line-through;">mysql_*</span> <strong><</strong> MySQLi <strong><</strong> PDO</code>
+  </div>
+  <div class="fragment" style="font-size: 1.5em;">
+    <code><span style="text-decoration:line-through;">ereg*</span> <strong><</strong> pcre</code>
+  </div>
+
+  <aside class="notes">
+    <p>
+      Extension <strong>mysql</strong> supprimée et donc les fonctions <strong>mysql_*</strong> associées.
+      En résumé vous devrez passer à PDO!
+      L'extension mssql a également été supprimée.
+    </p>
+    <p>
+      <strong>ereg*</strong> sont à remplacer par les <strong>PCRE</strong> (Perl Compatible Regular Expression)
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Checklist de migration</h5>
+  <h2>Directives INI supprimées</h2>
+  <ul style="list-style-type: none;">
+    <li><span style="color: #d9534f">✘</span> always_populate_raw_post_data</li>
+    <li><span style="color: #d9534f">✘</span> asp_tags</li>
+  </ul>
+
+  <aside class="notes">
+    <ul>
+      <li>always_populate_raw_post_data : si défini à TRUE, PHP va toujours peupler la variable $HTTP_RAW_POST_DATA des données brutes POST</li>
+      <li>asp_tags : Active l'utilisation des balises ASP (<% %>) tout en conservant les balises PHP (<?php ?>). Cela inclut l'utilisation des balises courtes comme <%= $valeur %></li>
+    </ul>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Checklist de migration</h5>
+  <div data-markdown>
+    ## Constructeurs PHP 4 dépréciés
+    ````php
+    class Filter {
+      public function filter() { ... }
+    }
+    new Filter();
+    ````
+    https://wiki.php.net/rfc/remove_php4_constructors
+  </div>
+
+  <aside class="notes">
+    <p>
+      Les constructeurs PHP4 ne sont plus reconnus dans une classe d'un namespace.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Checklist de migration</h5>
+  <div data-markdown>
+    ## Mots clés réservés supplémentaires
+    `bool`, `int`, `float`, `string`, `resource`, ...
+  </div>
+  <div class="fragment" data-markdown>
+    ````php
+    class resource {
+      public function __construct() { ... }
+    }
+    new resource();
+    ````
+  </div>
+  <div class="fragment" data-markdown>
+    ````text
+    Fatal error: "resource" cannot be used as a classname.
+    ````
+  </div>
+  <div data-markdown>
+    https://wiki.php.net/rfc/reserve_more_types_in_php_7
+    https://wiki.php.net/rfc/reserve_even_more_types_in_php_7
+  </div>
+
+  <aside class="notes">
+    <p>
+      Certains types sont devenus des mots clés réservés pour les noms de classes, traits et interfaces.
+    </p>
+    <p>
+      Par exemple ceci vous retournera une erreur fatale.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Checklist de migration</h5>
+  <div data-markdown>
+    ## "default" unique pour switch
+    ````php
+    switch($expr) {
+      default:
+    &nbsp;&nbsp;&nbsp;&nbsp;neverExecuted();
+    &nbsp;&nbsp;&nbsp;&nbsp;break;
+      default:
+    &nbsp;&nbsp;&nbsp;&nbsp;executed();
+    }
+    ````
+  </div>
+  <div class="fragment" data-markdown>
+    ````text
+    Fatal error: Switch statements may only contain one default clause.
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      switch n'accepte plus plusieurs default et générera une erreur fatale.
+    </p>
+  </aside>
+</section>
+    <section>
+  <div data-markdown>
+    ## Pourquoi PDO ?
+  </div>
+  <p>
+    <img data-src="/php7-presentation/img/why.jpg" class="img-responsive" alt="">
+  </p>
+
+  <aside class="notes">
+    <p>
+      Tout à l'heure je vous ai parlé de PDO (PHP Data Object). On va faire un petit rappel.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi PDO ?</h5>
+  <h2>Flexibilité des vendors</h2>
+
+  <div class="twocol">
+    <ul>
+      <li>PostgreSQL</li>
+      <li>SQLite</li>
+      <li>MySQL</li>
+      <li>Oracle</li>
+      <li>ODBC</li>
+      <li>MS SQLServer & Azure</li>
+    </ul>
+  </div>
+
+  <div class="twocol">
+    <ul>
+      <li>Firebird</li>
+      <li>Informix</li>
+      <li>IBM DB2</li>
+      <li>Sybase</li>
+      <li>Cubrid</li>
+      <li>4D</li>
+    </ul>
+  </div>
+
+  <aside class="notes">
+    <p>
+      Tout d'abord un point fort de PDO est la disponibilité des drivers pour plusieurs SGBD maintenus par la communauté PHP.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi PDO ?</h5>
+  <h2>Facilité d'installation</h2>
+
+  <div data-markdown>
+    ##### Debian (via Dotdeb repository)
+
+    ````text
+    sudo apt-get install php7.0-mysql
+    ````
+
+    ##### CentOS / RHEL (via Remi repository)
+
+    ````text
+    sudo yum install php-pdo php-mysql
+    ````
+
+    ##### Neard : activé par défaut
+  </div>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi PDO ?</h5>
+  <h2>Méthode de connexion unifiée et standard</h2>
+
+  <div data-markdown>
+    ````php
+    // MySQL
+    $dbh = new PDO("mysql:host=$host;dbname=$dbname, $user, $pass");
+
+    // MSSQL
+    $dbh = new PDO("mssql:host=$host;dbname=$dbname, $user, $pass");
+
+    // Sybase
+    $dbh = new PDO("sybase:host=$host;dbname=$dbname, $user, $pass");
+
+    // SQLite
+    $dbh = new PDO("sqlite:my/database/path/database.db");
+    ````
+  </div>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi PDO ?</h5>
+  <h2>Prepared statements pour se protéger des injections</h2>
+
+  <div data-markdown style="font-size: 0.8em;">
+    ````php
+    // No placeholders
+    $sth = $dbh->prepare("INSERT INTO users (name, email) VALUES ($name, $email)");
+
+    // Unnamed placeholders
+    $sth = $dbh->prepare("INSERT INTO users (name, email) VALUES (?, ?)");
+    $sth->bindParam(1, $name);
+    $sth->bindParam(2, $email);
+
+    // Named placeholders
+    $sth = $dbh->prepare("INSERT INTO users (name, email) VALUES (:name, :email)");
+    $sth->bindParam(':name', $name);
+    $sth->bindParam(':email', $email);
+
+    // Execute
+    $sth->execute();
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      Evitez la première, elle est là pour exemple de comparaison.
+      Pour les deux autres solutions ça dépendra de comment vous affectez les données àvos statements.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Pourquoi PDO ?</h5>
+
+  <div data-markdown>
+    ##### Pour plus d'infos je vous invite à lire cet article :
+
+    https://code.tutsplus.com/tutorials/why-you-should-be-using-phps-pdo-for-database-access--net-12059
+  </div>
+</section>
+    <section>
+  <div data-markdown>
+    # Nouveautés
+  </div>
+  <p>
+    <img data-src="/php7-presentation/img/new.jpg" class="img-responsive" alt="">
+  </p>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Types scalaires pour les paramètres</h2>
+
+  <div class="fragment" data-markdown>
+    ##### Types scalaires
+    `bool`, `int`, `float`, `string`.
+  </div>
+
+  <div class="fragment" data-markdown>
+    ##### Typehint
+    ````php
+    function formatDateInFrench(DateTime $date) {
+      return $date->format('d/m/Y');
+    }
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      Les types scalaires sont les types les plus simples en PHP, ce sont sont avec lesquels vous avez appris à utiliser le langage : bool, int, float, string.
+      Ce sont des types extremement courants dans vos développement quotidiens, je pense que l'on peut se passer de beaucoup plus d'explications.
+    </p>
+    <p>
+      Le typehint permet d'imposer à une fonction d'accepter uniquement des données d'un certain type. Introduit avec PHP 5.0, cela vous permet d'être certain
+      que ce que vous recevez dans votre fonction est effectivement une données du type souhaité.<br />
+    </p>
+    <p>(NEXT)</p>
+    <p>
+      Vous n'avez pas besoin de alors de vous demander si $date est du type DateTime, vous avez la garantie qu'il l'est.
+      Si un objet d'un autre type est passé en paramètre, une Fatal Error sera déclenchée.<br />
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Null coalesce operator</h2>
+
+  <div class="fragment" data-markdown>
+    ````php
+    // Before
+    $username = isset($_GET['user']) ? $_GET['user'] : 'nobody';
+    ````
+  </div>
+
+  <div class="fragment" data-markdown>
+    ````php
+    // After
+    $username = $_GET['user'] ?? 'nobody';
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      PHP étant un langage orienté vers le web, le fait de traiter des variables (tester leurs existences et fournir une valeur par défaut) est très fréquent.
+      Jusqu'à là il n'existait pas de méthode plus courte que celle-ci.
+    </p>
+    <p>NEXT</p>
+    <p>
+      Ce nouveau opérateur fournir une syntaxe plus courte et plus facilement compréhensible.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Spaceship operator</h2>
+
+  <div class="twocol">
+    <div class="fragment" data-markdown>
+      ````php
+      // Before
+      function foo($a ,$b) {
+        if ($a == $b) {
+      &nbsp;&nbsp;&nbsp;&nbsp;return 0;
+        } elseif ($a > $b) {
+      &nbsp;&nbsp;&nbsp;&nbsp;return -1;
+        } elseif ($b > $a) {
+      &nbsp;&nbsp;&nbsp;&nbsp;return 1;
+        }
+      }
+      ````
+    </div>
+  </div>
+
+  <div class="twocol">
+    <div class="fragment" data-markdown>
+      ````php
+      // After
+      function foo($a ,$b) {
+        return $a <=> $b;
+      }
+      ````
+    </div>
+  </div>
+
+  <aside class="notes">
+    <p>
+      C'est un nouveau opérateur qui retourne 0 si les deux opérandes sont égaux, 1 si celui de gauche est plus grand et -1 si celui de droite est plus grand.
+      Son utilité est fréquente, particulièrement dans les algorithmes de tri.
+      Avant nous avions : NEXT
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Type de retour</h2>
+
+  <div data-markdown>
+    ````php
+    // After
+    function isValidStatusCode(int $statusCode): bool {
+      return isset($this->statuses[$statusCode]);
+    }
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      On peut maintenant spécifier le type de retour d'une fonction ou d'une méthode. Pour cela il suffit d'ajouter deux points et le type que la fonction/méthode retourne.
+      Si le mode stricte n'est pas activé, quand une variable du mauvais type est retournée elle est convertie vers le bon type. Sinon un Fatal Error est déclenché.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Typage strict</h2>
+
+  <div class="fragment" data-markdown>
+    ````php
+    declare(strict_types=1);
+
+    function add(int $a, int $b) {
+      return $a + $b;
+    }
+
+    add(10, '20');
+    ````
+  </div>
+
+  <div class="fragment" data-markdown>
+    ````text
+    Fatal error: Uncaught TypeError:
+    &nbsp;&nbsp;&nbsp;&nbsp;Argument 2 passed to add()
+    &nbsp;&nbsp;&nbsp;&nbsp;must be of the type integer, string given
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      Si l'approche souple du typage ne vous satisfait pas ou que vous êtes certains des types de données
+      manipulés par votre code, vous pouvez activer un mode de typage strict, pour le fichier courant.
+    </p>
+    <p>
+      Ici, puisque '20' n'est pas un entier et que nous sommes en mode de typage strict, une TypeError sera levée :
+    </p>
+    <p>
+      Pour la distinction entre typage souple et typage strict :<br />
+      - Pour les paramètres, c'est au choix de l'appelant : c'est lui qui sait s'il manipule des données en types souples ou stricts.<br />
+      - Pour la valeur de retour, c'est au choix de l'appelé, qui sait si la fonction qu'il a écrite utilise des types souples ou stricts.<br />
+      Dans tous les cas, à l'intérieur de la fonction, les données sont des types indiqués : le paramétrage souple ou strict détermine uniquement si les conversions sont permises.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Classes anonymes</h2>
+
+  <div class="twocol">
+    <div class="fragment" data-markdown>
+      ````php
+      // Before
+      class Logger {
+        public function log($msg) {
+          echo $msg;
+        }
+      }
+
+      $util->setLogger(new Logger());
+      ````
+    </div>
+  </div>
+
+  <div class="twocol">
+    <div class="fragment" data-markdown>
+      ````php
+      // After
+      $util->setLogger(new class {
+        public function log($msg) {
+          echo $msg;
+        }
+      });
+      ````
+    </div>
+  </div>
+
+  <aside class="notes">
+    <p>
+      Le support pour les classes anonymes a été rajouté en PHP 7. Les classes anonymes sont utiles lorsque de simples objets uniques ont besoin d'être créés.
+      On peut leur passer des arguments via le constructeur, elles peuvent étendre d'autres classes, implémenter des interfaces ou utiliser des traits comme avec avec une classe normale.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Améliorations sur la gestion des erreurs</h2>
+
+  <div data-markdown>
+    * Erreurs fatales internes → exceptions
+    * Hiérarchie d'erreurs / exceptions
+  </div>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Erreurs fatales internes → exceptions</h2>
+
+  <div class="fragment" data-markdown>
+    ````php
+    $obj = null;
+    try {
+      // Ooops !
+      $obj->methode();
+    } catch (Error $e) {
+      var_dump($e>getMessage());
+    }
+    ````
+  </div>
+
+  <div class="fragment" data-markdown>
+    ````text
+    string(43) "Call to a member function methode() on null"
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      Avec PHP 7.0, une partie des erreurs Fatales et internes à / levées par PHP sont transformées en Error, qui peuvent être catchées. Par exemple :
+    </p>
+    <p>
+      Cette portion de code qui aurait entrainé en PHP 5 une Fatal Error mettant fin à l'exécution du script,
+      mène désormais à la sortie suivante, où nous sommes passés dans le bloc catch :
+    </p>
+    <p>
+      J'insiste : cette modification, qui va fortement aider ceux qui font tourner des programmes PHP pendant longtemps, ne s'applique pour l'instant qu'à certaines erreurs fatales, et uniquement levées depuis le moteur de PHP.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <h2>Hiérarchie d'erreurs / exceptions</h2>
+
+  <div class="fragment" data-markdown>
+  ````text
+  interface Throwable
+  &nbsp;&nbsp;&nbsp;&nbsp;Exception implements Throwable
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Toutes les exceptions usuelles
+  &nbsp;&nbsp;&nbsp;&nbsp;Error implements Throwable
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AssertionError extends Error
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ParseError extends Error
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TypeError extends Error
+  ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      Pour accompagner ce changement, la hiérarchie des classes d'exceptions a été revue, avec l'introduction d'une interface Throwable commune à tous les types d'exceptions.
+      Les exceptions usuelles continuent d'hériter de Exception, alors que les erreurs héritent quant à elles de Error, qui est une classe-soeur de Exception
+    </p>
+    <p>
+      De la sorte, le code qui attrapait une Exception ne se retrouve pas subitement, à partir de PHP 7.0, à également attraper les Error,
+      assurant que le comportement de votre code ne changera pas en passant de PHP 5 à PHP 7.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Nouveautés</h5>
+  <p>
+    <img data-src="/php7-presentation/img/more.jpg" class="img-responsive" alt="">
+  </p>
+  <div data-markdown>
+    Plus d'infos : http://php.net/manual/fr/migration70.new-features.php
+  </div>
+
+  <aside class="notes">
+    <p>
+      Bien sûr, je n'ai pas listé ici toutes les nouveautés de PHP 7.0 et me suis limité à celles qui avaient le plus attiré mon attention.
+    </p>
+  </aside>
+</section>
+    <section>
+  <div data-markdown>
+    # PHP 7.1
+  </div>
+  <p>
+    <img data-src="/php7-presentation/img/php71.jpg" class="img-responsive" alt="">
+  </p>
+</section>
+
+<section>
+  <h5 class="title-min">PHP 7.1</h5>
+  <div data-markdown>
+    ##### Visibilité des constantes de classe
+
+    ````php
+    class Foo {
+      public const PUB_BAR = 42;
+      private const PRIV_BAR = 1234;
+      public function bar() {
+    &nbsp;&nbsp;&nbsp;&nbsp;var_dump(self::PRIV_BAR);
+      }
+    }
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      Les constantes de classes supportent désormais les visibilités public, protected et private.
+      Les constantes sans visibilité seront attribuées comme publiques.
+      Les interfaces, elles, peuvent uniquement déclarer des constantes comment étant publiques.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">PHP 7.1</h5>
+  <div data-markdown>
+    ##### Type de retour "void"
+
+    ````php
+    function noReturn(): void {
+      // Valid
+    }
+
+    function nothing(): void {
+      return; // Valid too!
+    }
+
+    function outch(void $foo) {
+      // Fatal error.
+    }
+
+    function returnNull(): void {
+      return null; // Fatal error.
+    }
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      C'est le type de retour qu'il manquait depuis la sortie de PHP 7.0.
+      Vous pouvez maintenant indiquer qu'une fonction ne retourne rien.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">PHP 7.1</h5>
+
+  <div data-markdown>##### Types "nullable"</div>
+
+  <div class="twocol" data-markdown>
+    ````php
+    function response1(): ?int {
+      return null; // OK
+    }
+
+    function response2(): ?int {
+      return 42; // OK
+    }
+    ````
+  </div>
+
+  <div class="twocol" data-markdown>
+    ````php
+    function response3(): ?int {
+      return new stdClass; // ERROR
+    }
+
+    // Le paramètre doit valoir un string ou être null
+    function dire(?string $message) {
+      if ($message) {
+    &nbsp;&nbsp;&nbsp;&nbsp;echo $message;
+      }
+    }
+    ````
+  </div>
+
+  <aside class="notes">
+    <p>
+      Bon, le retour de type "void" n'était pas le seul qu'il manquait. Mais le type nullable est un peu différent.
+      En effet, il permet de compléter un type de paramètre ou de retour en indiquant qu'il accepte en plus le type "null".
+    </p>
+    <p>
+      La sortie de PHP 7.1 signe également l'abandon de la librairie mcrypt (donc de toutes les fonctions type mcrypt_*),
+      le support des closures depuis des callable ou encore de l'ajout d'avertissements lors des conversions pendant les opérations arithmétiques.
+    </p>
+  </aside>
+</section>
+    <section>
+  <div data-markdown>
+    ## Tester une migration à PHP 7
+  </div>
+  <p>
+    <img data-src="/php7-presentation/img/migration.jpg" class="img-responsive" alt="">
+  </p>
+
+  <aside class="notes">
+    <p>
+      Avant de sauter le pas, il faut tout d'abord rechercher les incompatibilités présentes dans votre projet.
+      Pour cela plusieurs solutions sont disponibles.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Tester une migration à PHP 7</h5>
+  <h2>php7cc</h2>
+
+  <div class="twocol">
+    <ul>
+      <li>Outil en CLI</li>
+      <li>Installation par Phar, Composer ou Docker</li>
+    </ul>
+  </div>
+
+  <div class="twocol">
+    <img data-src="/php7-presentation/img/php7cc-warning.png" class="img-responsive" style="max-height: 480px;" alt="">
+  </div>
+
+  <div data-markdown>
+    Plus d'infos : https://github.com/sstalle/php7cc
+  </div>
+
+  <aside class="notes">
+    <p>
+      php7cc ou PHP 7 Compatibility Checker est un outil en ligne de command prévu pour faire une migration depuis PHP 5.3-5.6 vers PHP 7 facilement.
+    </p>
+    <p>
+      Vous pouvez l'installer par phar, Composer ou Docker.
+    </p>
+  </aside>
+</section>
+
+    <section>
+  <div data-markdown>
+    # Symfony
+  </div>
+  <p>
+    <img data-src="/php7-presentation/img/symfony.png" class="img-responsive" style="border: none;background: none;" alt="">
+  </p>
+</section>
+
+<section>
+  <h5 class="title-min">Symfony</h5>
+  <p>
+    <img data-src="/php7-presentation/img/symfony-release-process.jpg" class="img-responsive" style="max-height: 540px;" alt="">
+  </p>
+
+  <aside class="notes">
+    <p>Symfony 3 est sorti en Novembre 2015</p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Symfony</h5>
+  <p>
+    <img data-src="/php7-presentation/img/symfony-lts.jpg" class="img-responsive" style="max-height: 540px;" alt="">
+  </p>
+
+  <aside class="notes">
+    <p>
+      Sur ce tableau vous pouvez voir les versions de Symfony qui sont en LTS (Long Term Support) sur 36 mois (3 ans)
+      et qui donc supportent PHP 7 actuellement.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Symfony</h5>
+  <h5>
+    Dans ces versions compatibles avec PHP 7, des fonctions obsolètes ont été supprimées et la version minimum de PHP
+    est désormais passée de 5.5 à 5.6.
+  </h5>
+
+  <aside class="notes">
+    <p>
+      Et comme je vous le disais, la version 2.8 en LTS intègre bien sûr les fonctionnalités de la version 3.0 en
+      conservant la rétro compatibilité avec les précendentes versions.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Symfony</h5>
+  <p data-markdown>
+    ## Changements
+    * Signatures de méthode
+    * Redéfinition de classes et méthodes
+    * Adaptation aux nouvelles normes PSR (php-fig.org)
+    * Modification de la structure des fichiers
+  </p>
+
+  <aside class="notes">
+    <p>
+      Des changements dans son architecture ont été effectués.
+    </p>
+  </aside>
+</section>
+
+<section>
+  <h5 class="title-min">Symfony</h5>
+  <p data-markdown>
+    ## Rappel sur les normes PSR
+
+    > PSR : Propose a Standards Recommendation
+
+    * PSR-0 : Chargement des classes PHP et autoloading
+    * PSR-1 : Conventions minimales de codage
+    * PSR-2 : Style et l'organisation du code
+    * PSR-3 : S'occupe de l'interface des loggers
+    * PSR-4 : Nouveau standard d'autoloading
+    * ...
+
+    *Source : http://www.php-fig.org/psr/*
+  </p>
+
+  <aside class="notes">
+    <p>
+      Ces recommandations sont validées par le PHP Framework Interoperability Group (www.php-fig.org)
+    </p>
+  </aside>
+</section>
+    <section>
+  <h2>Merci pour votre attention !<br />Des questions ?</h2>
+  <p>
+    <img data-src="/php7-presentation/img/questions.png" class="img-responsive" style="border: none;background: none;" alt="">
+  </p>
+</section>
+  </div>
+</div>
+    
+  
+    
+      
+      <script src="/php7-presentation/assets/reveal.js/js/reveal.js"></script>
+      
+    
+  
+    
+      
+      <script src="/php7-presentation/assets/headjs/dist/1.0.0/head.min.js"></script>
+      
+    
+  
+    
+      
+      <script src="/php7-presentation/assets/reveal.js/lib/js/classList.js"></script>
+      
+    
+  
+    
+    <!--[if lt IE 9]>
+    <script src="/php7-presentation/assets/reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      <script src="/php7-presentation/assets/zepto/zepto.js"></script>
+      
+    
+  
+
+
+
+  
+    <script src="/php7-presentation/assets/php7-presentation.d7174b3ca3736c2aa13e50a914626fe0.js"></script>
+  
+
+
+
+
+<script type="text/javascript">
+  // Full list of configuration options available at:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    // Display controls in the bottom right corner
+    controls: true,
+
+    // Display a presentation progress bar
+    progress: true,
+
+    // Display the page number of the current slide
+    slideNumber: true,
+
+    // Push each slide change to the browser history
+    history: true,
+
+    // Enable keyboard shortcuts for navigation
+    keyboard: true,
+
+    // Enable the slide overview mode
+    overview: true,
+
+    // Vertical centering of slides
+    center: true,
+
+    // Enables touch navigation on devices with touch input
+    touch: true,
+
+    // Loop the presentation
+    loop: false,
+
+    // Change the presentation direction to be RTL
+    rtl: false,
+
+    // Turns fragments on and off globally
+    fragments: true,
+
+    // Flags if the presentation is running in an embedded mode,
+    // i.e. contained within a limited portion of the screen
+    embedded: false,
+
+    // Flags if we should show a help overlay when the questionmark
+    // key is pressed
+    help: true,
+
+    // Number of milliseconds between automatically proceeding to the
+    // next slide, disabled when set to 0, this value can be overwritten
+    // by using a data-autoslide attribute on your slides
+    autoSlide: 0,
+
+    // Stop auto-sliding after user input
+    autoSlideStoppable: true,
+
+    // Enable slide navigation via mouse wheel
+    mouseWheel: true,
+
+    // Hides the address bar on mobile devices
+    hideAddressBar: true,
+
+    // Opens links in an iframe preview overlay
+    previewLinks: false,
+
+    // Transition style
+    transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // Transition speed
+    transitionSpeed: 'default', // default/fast/slow
+
+    // Transition style for full page slide backgrounds
+    backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+    // Number of slides away from the current that are visible
+    viewDistance: 3,
+
+    // Parallax background image
+    parallaxBackgroundImage: 'img/background.jpeg', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+    // Parallax background size
+    parallaxBackgroundSize: '1920px 1281px', // CSS syntax, e.g. "2100px 900px"
+
+    // Amount to move parallax background (horizontal and vertical) on slide change
+    // Number, e.g. 100
+    parallaxBackgroundHorizontal: '',
+    parallaxBackgroundVertical: '',
+
+    // The "normal" size of the presentation, aspect ratio will be preserved
+    // when the presentation is scaled to fit different resolutions. Can be
+    // specified using percentage units.
+    width: 1280,
+    height: 720,
+
+    // Factor of the display size that should remain empty around the content
+    margin: 0.05,
+
+    // Bounds for smallest/largest possible scale to apply to content
+    minScale: 0.2,
+    maxScale: 1.5,
+
+    // Ctrl + Mouse-Click ==> Zoom in
+    zoomKey: 'ctrl',
+
+    // Optional reveal.js plugins
+    dependencies: [
+      {
+        src: '/php7-presentation/assets/reveal.js/lib/js/classList.js', condition: function () {
+          return !document.body.classList;
+        }
+      },
+      {
+        src: '/php7-presentation/assets/reveal.js/plugin/markdown/marked.js', condition: function () {
+          return !!document.querySelector('[data-markdown]');
+        }
+      },
+      {
+        src: '/php7-presentation/assets/reveal.js/plugin/markdown/markdown.js', condition: function () {
+          return !!document.querySelector('[data-markdown]');
+        }
+      },
+      {
+        src: '/php7-presentation/assets/reveal.js/plugin/highlight/highlight.js', async: true, condition: function () {
+          return true;
+        }, callback: function () {
+          hljs.initHighlightingOnLoad();
+        }
+      },
+      {
+        src: '/php7-presentation/assets/reveal.js/plugin/zoom-js/zoom.js',
+        async: true
+      },
+      {
+        src: '/php7-presentation/assets/reveal.js/plugin/notes/notes.js',
+        async: true
+      }
+    ]
+  });
+</script>
+  </body>
+</html>
