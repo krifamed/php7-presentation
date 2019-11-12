@@ -1,0 +1,433 @@
+<section>
+    <h2>Programmation oriené object</h2>
+    <p>
+        <img data-src="{{ site.baseurl }}/img/poo_test.png" class="img-responsive" alt="">
+    </p>
+</section>
+
+<section>
+    <h5 class="title-min">POO</h5>
+
+    <h1>What is a class?</h1>
+
+    <div class="fragment">
+            <h3>A <strong style="color: skyblue">Blue</strong>Print</h3>
+        <p>
+            <img data-src="{{ site.baseurl }}/img/blueprint.jpg" width="300" height="300" class="img-responsive" alt="">
+        </p>
+    </div>
+
+    <aside class="notes">
+        <p>Comme on l'a vu sur la timeline il était temps de passer à une nouvelle version majeure après 13 ans de
+            service pour PHP 5!</p>
+        <p>De plus, PHP 7 est assez mature pour se permettre cette transition!</p>
+    </aside>
+</section>
+<section>
+    <h5 class="title-min">POO</h5>
+
+    <h1>What does a class do?</h1>
+
+    <div class="fragment">
+        <h1>Etats/Comportements</h1>
+    </div>
+    <div class="fragment">
+        <h1>Proprieté/ methods</h1>
+    </div>
+</section>
+
+<section>
+    <h5 class="title-min">POO</h5>
+        <div class="fragment" data-markdown>
+            ````php
+            class Car {
+                protected numberOfDoors;
+                public function accelerate(){...} 
+            }
+            ````
+        </div>
+
+</section>
+
+<section>
+    <h5 class="title-min">POO</h5>
+
+    <h1>C'est quoi object?</h1>
+
+    <div class="fragment">
+        <h1>Un instance du classe</h1>
+    </div>
+    <div class="fragment" data-markdown>
+        ````php
+        $renault4 = new Car();
+        $ferrari = new Car(2);
+        ````
+    </div>
+</section>
+<section>
+    <h5 class="title-min">POO</h5>
+
+    <h1>Consturcteur</h1>
+    <div class="twocol">
+        <div class="fragment" data-markdown>
+            ````php
+            // insted of this 
+            class Car {
+                ...
+                public function setNbrDoors(int $nbDoors){
+                    $this->numberOfDoors = $nbDoors;
+                }
+                ...
+            }
+            $ferrari = new Car();
+            $ferrari->setNbrDoors(2);
+            ````
+        </div>
+    </div>
+    <div class="twocol">
+        <div class="fragment" data-markdown>
+            ````php
+            // use this
+            class Car {
+                ...
+                public function __construct(int $nbDoors){
+                    $this->numberOfDoors = $nbDoors;
+                }
+            }
+            $ferrari = new Car(2);
+            ````
+        </div>
+    </div>
+</section>
+
+<section>
+    <h5 class="title-min">POO</h5>
+
+    <h1>Visibility</h1>
+    <ul>
+
+        <div class="fragment">
+            <li>public</li>
+        </div>
+        <div class="fragment">
+            <li>private</li>
+        </div>
+        <div class="fragment">
+            <li>protected</li>
+        </div>
+    </ul>
+</section>
+
+<section>
+    <section>
+        <h5 class="title-min">POO</h5>
+        
+        <h2>Héritage</h2>
+        <img data-src="{{ site.baseurl }}/img/inheritance.png" class="img-responsive"
+            alt="">
+    </section>
+    <section>
+        <h5 class="title-min">POO</h5>
+        
+        <h1>Héritage</h1>
+        
+        <div data-markdown>
+            ````php
+            
+            class Ferrari extends Car {
+                ...
+                public function __construct(){
+                    parrent::__construct();
+                    echo "i'm a ".__CLASS__;
+                }
+                public function accelerate(){
+                    // Ferrari acceleration
+                }
+                public function burnRubber(){
+                    // Go really fast 
+                }
+            }
+            ````
+        </div>
+    </section>
+    <section>
+        <h5 class="title-min">POO</h5>
+        
+        <h1>Héritage</h1>
+        <h3>Don't do this</h3>
+        <div class="fragment" data-markdown>
+            ````php
+            // Don't do this 
+            class Dog extends Leg {...}
+            ````
+            </div>
+    </section>
+    <section>
+        <h3>Don't do this</h3>
+        <div>
+            <img data-src="{{ site.baseurl }}/img/badInheritance.png" class="img-responsive" alt="">
+        </div>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h5 class="title-min">POO</h5>
+        
+        <h2>Classes/Methods abstarct</h2>
+            <img data-src="{{ site.baseurl }}/img/abstract.png" class="img-responsive"
+            alt="">
+    </section>
+    <section>
+        <h5 class="title-min">POO</h5>
+        
+        <h1>Classes/Methods abstarct</h1>
+        
+        <div data-markdown>
+            ````php
+            abstract class ParentClass { /* ... */ }
+            ````
+        </div>
+        <ul>
+            <div class="fragment">
+                <li>Abstract class can have abstract method</li>
+            </div>
+            <div class="fragment">
+                <li>Abstract methods can be either public or protected</li>
+            </div>
+            <div class="fragment">
+                <li>ovveride all abstract methods in Childs classes</li>
+            </div>
+        </ul>
+    </section>
+    <section>
+        <h5 class="title-min">POO</h5>
+        
+        <h2>Classes/Methods abstarct</h2>
+        <div class="fragment" data-markdown>
+            ````php
+            abstract class ParentClass {
+                ...
+                abstract public function sayHi(): void;
+                ...
+            }
+            ````
+            </div>
+        <div class="fragment" data-markdown>
+            ````php
+             class Child extends ParentClass {
+                ...
+                public function sayHi($name = "freeways"): void{
+                    echo "hi ".$name;
+                }
+                ...
+            }
+            ````
+            </div>
+    </section>
+</section>
+
+<section>
+    <section>
+        <h5 class="title-min">POO</h5>
+        
+        <h3>Interface</h3>
+        <img data-src="{{ site.baseurl }}/img/interface.png" class="img-responsive"
+        alt="">
+    </section>
+    <section>
+        <h5 class="title-min">POO</h5>
+        
+        <h1>Interface</h1>
+        
+        <div data-markdown>
+            ````php
+            Interface Person { /* ... */ }
+            ````
+        </div>
+        <ul>
+            <div class="fragment">
+                <li>Only abstract methods</li>
+            </div>
+            <div class="fragment">
+                <li>All methods must have public visibility</li>
+            </div>
+        </ul>
+    </section>
+    <section>
+        <h5 class="title-min">POO</h5>
+        <div class="fragment" data-markdown>
+            ````php
+            Interface Person {
+                ...
+                public function __construct($name);
+                public function sayHi(): void;
+                ...
+            }
+            ````
+            </div>
+        <div class="fragment" data-markdown>
+            ````php
+             class Freewayser extends Person {
+                ...
+                public function __construct($name){
+                    $this->name = $name;
+                }
+                public function sayHi($content = "freesoftware"): void{
+                    echo "i love ".$name;
+                }
+                ...
+            }
+            ````
+            </div>
+    </section>
+    
+    
+</section>
+
+<section>
+    <h5 class="title-min">POO</h5>
+    <h3>Class constants</h3>
+
+    <ul>
+        <div class="fragment">
+                <li>Declared within the class</li>
+            </div>
+            <div class="fragment">
+                <li>no <code>$</code> used</li>
+            </div>
+        </ul>
+    <div class="fragment" data-markdown>
+            ````php
+            class Welcome {
+            ...
+                const MSG = "Hello";
+                public function sayHi(){
+                    echo self::MSG;
+                }
+            ...
+            }
+            ````
+    </div>
+</section>
+
+
+<section>
+    <section>
+        <h5 class="title-min">POO</h5>
+
+        <h3>Static methods/properties</h3>
+        <ul>
+            <div class="fragment">
+                <li>Can be called directly without an instance of a class</li>
+            </div>
+            <div class="fragment">
+                <li><code>static</code> word used in declaration </li>
+            </div>
+            <div class="fragment">
+                <li>default to public if no visibility is specified </li>
+            </div>
+        </ul>
+    </section>
+    <section>
+        <h5 class="title-min">POO</h5>
+        <div class="fragment twocol" data-markdown>
+            ````php
+            class Person {
+            ...
+            static $name = "freeways";
+            protected static function getName(){
+                // or return Person::name;
+                return self::name;
+
+            }
+            ...
+            }
+            ````
+        </div>
+        <div class="fragment twocol" data-markdown>
+            ````php
+            class Freewayser extends Person {
+            ...
+            public function someMethod(){
+            echo parrent::getName();
+            // or self::getName();
+            // or Person::getName();
+            }
+            ...
+            }
+            ````
+        </div>
+    </section>
+
+
+</section>
+
+<section>
+    <section>
+        <h5 class="title-min">POO</h5>
+
+        <h3>Namespaces</h3>
+        <ul>
+            <div class="fragment">
+                <li><code>Problem : </code>You cannot have tow classes with the same name</li>
+            </div>
+            <div class="fragment">
+                <li><code>Namespaces</code> allow you to have multiple classes with the same name.</li>
+            </div>
+            <div class="fragment">
+                <li><code>Namespaces</code> can prevent name collision</li>
+            </div>
+            <div class="fragment">
+                <li><code>Namespaces</code> can make our code more organized</li>
+            </div>
+        </ul>
+    </section>
+    <section>
+        <h5 class="title-min">POO</h5>
+        <h3>Namespaces</h3>
+        <ul>
+            <div class="fragment">
+                <li>Any valid php code can be in a namespace</li>
+            </div>
+            <div class="fragment">
+                <li>Only classes, constants, functions, and interfaces are affected</li>
+            </div>
+        </ul>
+    </section>
+        <section>
+            <h5 class="title-min">POO</h5>
+        
+            <h3>Namespaces</h3>
+                    <div class="fragment twocol" data-markdown>
+                        ````php
+                        //Math.php
+                        namespace Math;
+                        function add(int $a, int $b): int{
+                            return $a+$b;
+                        }
+                        const PI = 3.1415;
+                        class Geometry {
+                            public function cirleArea($radius){
+                                return PI*$raduis**2;
+                            }
+                        }
+                        ````
+                    </div>
+                    <div class="fragment twocol" data-markdown>
+                        ````php
+                        //usage.php
+                        // includes the Math.php file
+                        include_once 'Math.php';
+                        echo Math\add(2,3);
+                        echo Math\PI;
+                        echo Math\Geometry::cirleArea(10);
+
+                        ````
+                    </div>
+        </section>
+
+
+</section>
+
+<section>
