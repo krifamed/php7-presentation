@@ -1,0 +1,67 @@
+<section>
+  <section>
+  <h1>
+      Structure de contrôle
+  </h1>
+  
+  <div class="twocol" class="fragment fade-in" data-markdown>
+      ````php
+      if ($x>$y){
+        print("1\n");
+      }elseif($x==$y){
+        print("0\n");
+      }else{
+        print("-1\n");
+      }
+      //peut etre remplacer par print($x<=>$y)
+      $z=isset($x)? $x : $y; \\la meme que $z=$x??$y;
+      ````
+  </div>
+  <div class="twocol" class="fragment fade-in" data-markdown>
+      ````php
+      $x=$y=9;
+      if ($x>$y &&(isset($z)|| $x==10)){
+       print("mirguel");
+      }
+      ````
+  </div>
+</section>
+<section>
+  <h2>Loops</h2>
+  <div class="twocol" class="fragment fade-in" data-markdown>
+      ````php
+      $x=1;
+      while($x&lt;10){
+        x++;
+      }
+      for($x=1 ; $x&lt;10 ; $x++){
+        print($x);
+        print("\n");
+      }
+      $arr=range(0,11);
+      foreach($arr as $num){ \\or foreach($arr as $key =>$value)
+        print($num);
+        print("\n");
+      }
+      ````
+  </div>
+  <div class="twocol" class="fragment fade-in" data-markdown>
+      ````php
+      $i=0;
+      var_dump($i);
+      while($i&lt;100){
+        
+        if($i==50){
+        break;
+          
+        }
+        if($i==99){
+          print($i);
+        }
+        $i++;
+        var_dump($i);
+      }
+      ````
+  </div>
+</section>
+</section>

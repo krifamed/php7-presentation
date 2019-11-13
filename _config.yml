@@ -15,7 +15,7 @@ flattr-username: "crazymax"
 # Github
 github:
   baseurl: https://github.com
-  user: crazy-max
+  user: krifamed
   repo: php7-presentation
 
 # Author
@@ -26,7 +26,7 @@ author:
   telephone:
   social:
     facebook: crazyws.fr
-    github: crazy-max
+    github: krifamed
     twitter: crazyws
     reddit:
     google-plus: 106054122073793220041

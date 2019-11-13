@@ -1,0 +1,83 @@
+<section>
+  <h1>
+    Typage system
+    <p class="fragment fade-in">Dynamic</p>
+  </h1>
+
+  <div class="fragment fade-in" data-markdown>
+    ````php
+    \\ pas besoin de spécifier le type de la variable $x=50;
+    $x="hello"*2;
+    define("HELLO","GO FUCK URSELF");
+    ````
+  </div>
+</section>
+<section>
+  <section>
+    <h1>Types</h1>
+    <div class="twocol" class="fragment fade-in">
+      <h3>scalar</h3>
+      <div data-markdown>
+        ````php $x=50; //int
+        $y=5.3; // float
+        $bol=true; // boolean
+        $ch="hello";// string ````
+      </div>
+    </div>
+    <div class="twocol" class="fragment fade-in">
+      <h3>compound</h3>
+      <div data-markdown>
+        ````php
+        $x=[5,true,2.6,"hello"]; // array
+        $x=[5=>"nice","hello"=>true,"koo"=>2.6];// also an array
+        class Demo{
+        public function show(){ echo "This is show method<br />"; } }
+        $obj= New Demo{};
+        ````
+      </div>
+    </div>
+
+  </section>
+  <section>
+    <h2> opperation numeric</h2>
+    <div data-markdown>
+      <code>
+      $x=9%4; //1
+      $x=9/4;//2.25 
+      $x=ceil(9/4); // 3
+      $x=pow(3,4);
+    </code>
+    </div>
+  </section>
+  <section>
+    <h2>operation sur chaine</h2>
+    <div data-markdown>
+      <code>
+        $ch="hello";  
+        $x=strlen("hello"); //$x==5
+        print($ch);
+        $char=$ch[0];
+        print($char."\n");
+        $ch[0]='9';
+        print($ch);
+        $split = str_split($ch,1);
+        print($split);
+      </code>
+    </div>
+  </section>
+  <section>
+    <h2>operation sur table</h2>
+    <div data-markdown>
+      <code>
+              $arr=array("walid"=>9.5,"krifa"=>15,"ilyes"=>10);
+              var_dump(count($arr));
+              var_dump(array_keys($arr));
+              var_dump(array_values($arr));
+              array_pop($arr);
+              $arr +=["nader"=>19];
+              var_dump($arr);
+              //add element in the back of an array
+        </code>
+    </div>
+  </section>
+</section>

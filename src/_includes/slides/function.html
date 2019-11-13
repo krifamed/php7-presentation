@@ -1,0 +1,79 @@
+<section>
+  <section>
+    <h1>
+      Functions
+    </h1>
+
+    <div class="twocol" class="fragment fade-in" data-markdown>
+      <h3>normal function</h3>
+      ````php
+      function sum($x,&$y){
+      $y++;
+      return $x+$y;
+      }
+      $i=9;
+      $m=5.9;
+      $z=sum($i,$m);
+      var_dump($z);
+      var_dump($m);
+      ````
+    </div>
+    <div class="twocol" class="fragment fade-in" data-markdown>
+      <h3>Variadic Function</h3>
+      ````php
+      function sum(...$x){
+      $sum=0;
+      foreach($x as $num){
+      $sum+=$num;
+      }
+
+      return $sum;
+      }
+      $i=9;
+      $m=5.9;
+      $z=sum($i,$m,9,5);
+      var_dump($z);
+      var_dump($m);
+      }
+      ````
+    </div>
+  </section>
+  <section>
+      <div>
+        <div>        
+          <p> vous vos rappeler de typage strict
+          eh ben<br><p class="fragment fade-in"> c'est faux</p></p> 
+        </div>
+         <div class="fragment fade-in" data-markdown>
+           ````php
+            declare(strict_types=1);
+            function sum(int $x,int $y):int{
+              return $x+$y;
+            }
+            var_dump(sum(5,1.6));
+           ````
+         </div>
+        </div>
+  </section>
+  <section>
+    <h3>exception</h3>
+    <div data-markdown>
+      function inverse($x) {
+      if (!$x) {
+      throw new Exception('Division by zero.');
+      }
+      return 1/$x;
+      }
+  
+      try {
+      echo inverse(5) . "\n";
+      echo inverse(0) . "\n";
+      } catch (Exception $e) {
+      echo 'Caught exception: ', $e->getMessage(), "\n";
+      }
+  
+      `
+    </div>
+  </section>
+
+</section>
